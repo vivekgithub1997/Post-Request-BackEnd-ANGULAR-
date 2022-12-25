@@ -1,0 +1,37 @@
+<h2>Spring Boot with Angular Integration</h2>
+
+{{msg}}
+
+<div class="center"><form>
+    Book Name: <input type="text" name="booName" [(ngModel)]="book.bookName" /> <br/>
+    Book Price: <input type="text" name="bookPrice" [(ngModel)]="book.bookPrice" /> <br/>
+    Book Author: <input type="text" name="bookAuthor" [(ngModel)]="book.bookAuthor" /> <br/>
+   
+    <input type="button" value="Add-Book" (click)="saveBook()"/>
+   </form></div>
+
+<hr>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Book Id</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Book Price</th>
+        <th scope="col">Book Author</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>#</td>
+            <td>{{book.bookName}}</td>
+            <td>{{book.bookPrice}}</td>
+            <td>{{book.bookAuthor}}</td>
+            <td><button class="btn btn-danger">Delete</button></td>
+        </tr>
+
+    </tbody>
+  </table>
+
